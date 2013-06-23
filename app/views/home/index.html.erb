@@ -1,0 +1,12 @@
+<h1>Welcome to Smovies</h1>
+
+<% @movies.each do |movie| %>
+
+  <h2><%= movie.name %></h2>
+  <div>
+    <%= movie.started_at.to_s(:short) %>
+    $<%= movie.price %>
+  </div>
+  <hr/>
+
+<% end %>

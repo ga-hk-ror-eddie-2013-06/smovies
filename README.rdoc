@@ -1,0 +1,11 @@
+== Smovies
+
+Final project of the General Assembly Hong Kong "Introduction to Ruby On Rails" course.
+
+Smovies (pron. Smoothies) is a movie directory that maintained by a group of administrators.
+
+- Look and Feel using the twitter bootstrap fluid responsive layout
+- Add menu links to Movies listing, Sign in and Logout.
+- Administrator can sign in and manage movie list
+- Audience can sign up and register
+- Public can see the list of movies
