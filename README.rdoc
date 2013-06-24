@@ -2,10 +2,28 @@
 
 Final project of the General Assembly Hong Kong "Introduction to Ruby On Rails" course.
 
-Smovies (pron. Smoothies) is a movie directory that maintained by a group of administrators.
+Smovies[http://smovies.herokuapp.com] (pron. Smoothies) is a movie directory that maintained by a group of administrators.
 
 - Look and Feel using the twitter bootstrap fluid responsive layout
 - Add menu links to Movies listing, Sign in and Logout.
 - Administrator can sign in and manage movie list
 - Audience can sign up and register
 - Public can see the list of movies
+
+
+== Deploy to heroku
+
+After you setup your heroku account, update account SSH keys, install heroku toolbelt.
+there are several commands you have to run inside your rails app folder:
+
+    heroku create smovies-[your-name-here]
+    git push heroku master
+    heroku run rake db:migrate
+
+== Notes
+
+If you use **Windows** Rails installer to setup your rails, there may be asset compiling errors at various steps:
+- you may not be able to use less to customize your twitter bootstrap css
+- you may not be able to generate the application.js properly (remove the require_tree . line may help)
+- installing node.js in your machine may help (search stackoverflow for more details)
+
