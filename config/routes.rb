@@ -1,5 +1,5 @@
 Smovies::Application.routes.draw do
-  devise_for :audiences
+  devise_for :audiences, :controllers => { :omniauth_callbacks => "audiences/omniauth_callbacks" }
 
   devise_for :admins
 

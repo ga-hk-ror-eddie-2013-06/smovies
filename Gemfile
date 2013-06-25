@@ -14,10 +14,17 @@ end
 # for authentication
 gem 'devise'
 
+# for Sign in with Facebook
+gem 'omniauth'
+gem 'omniauth-facebook'
+
 # for look and feel
 gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"
+
+# for managing env["FB_APP_ID"] in dev and test (production heroku server use heroku config:set FB_APP_ID)
+gem 'dotenv-rails', :groups => [:development, :test]
 
 
 # Gems used only for assets and not required

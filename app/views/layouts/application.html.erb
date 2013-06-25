@@ -59,6 +59,7 @@
               <% if current_audience %>
               <li><%= link_to "Audience Logout", destroy_audience_session_path, :method => :delete  %></li>
               <% else %>
+              <li><%= link_to "Sign in with Facebook", audience_omniauth_authorize_path(:facebook) %></li>
               <li><%= link_to "Audience Sign In", new_audience_session_path  %></li>
               <% end %>
             </ul>

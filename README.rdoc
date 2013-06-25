@@ -24,6 +24,49 @@ there are several commands you have to run inside your rails app folder:
 
 If you use **Windows** Rails installer to setup your rails, there may be asset compiling errors at various steps:
 - you may not be able to use less to customize your twitter bootstrap css
+  follow the "Installing the CSS stylesheets" section in https://github.com/seyhunak/twitter-bootstrap-rails
+  do not follow the "Installing the Less stylesheets"
 - you may not be able to generate the application.js properly (remove the require_tree . line may help)
 - installing node.js in your machine may help (search stackoverflow for more details)
 
+== Setting up Facebook developer app account
+
+Register your developer account and create a new facebook apps
+http://developer.facebook.com
+
+Suggest creating 2 apps, one for dev, one for prod:
+![alt tag](https://raw.github.com/ga-hk-ror-eddie-2013-06/smovies/master/setup_fb_apps_dev.png)
+
+== Some command lines being run in the Terminal / Command Prompt
+
+    # copy and paste from https://github.com/seyhunak/twitter-bootstrap-rails
+    rails generate bootstrap:install less
+    rails g bootstrap:layout application fluid
+    # copy and paste from https://github.com/plataformatec/devise/
+    rails generate devise:install
+    rails generate devise admin
+    rails generate devise:views admins\
+    rails generate devise audience
+    rails generate devise:views audiences
+    # rails generators to setup model, view and controller
+    rails generate controller home index
+    rails generate movie name price:integer started_at:datetime
+    rake db:migrate
+    # setup git, commit and push to github
+    git init
+    git add .
+    git commit -m "Initial Commit"
+    git remote add origin git@github.com:ga-hk-ror-eddie-2013-06/smovies.git
+    git push origin master
+    # setup heroku and push to heroku
+    heroku create smovies
+    git push heroku master
+    heroku run rake db:migrate
+    # https://github.com/plataformatec/devise/wiki/OmniAuth:-Overview
+    rails generate migration add_omniauth_columns_to_audiences provider uid name
+    rake db:migrate
+    heroku config:set FB_APP_ID=xxxx
+    heroku config:set FB_APP_SECRET=xxxx
+    git push heroku master
+    heroku run rake db:migrate
+    
